@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/new/" method="post">
+    {% csrf_token %}
+    <div class="form-group mb-2">
+        <textarea class="form-control" style="resize: none" name='title' id="title"></textarea>
+        <textarea class="form-control" style="resize: none" name='content' id="content"></textarea>
+        <select name="category" id="category">
+            <option value="movie">movie</option>
+            <option value="drama">drama</option>
+            <option value="entertainment">entertainment</option>
+        </select>
+        <button type="submit" class="btn btn-primary" style="float:right;">작성하기</button>
+    </div>
+</form>
+</body>
+</html>
