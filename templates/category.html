@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+{% for name, count in category_count.items %}
+    <a href='/{{ name }}'>{{ name }}({{ count }})</a>
+{% endfor %}
+<a href="new/">글쓰기</a>
+
+</body>
+</html>

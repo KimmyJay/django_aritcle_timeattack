@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    form.form-example {
+        display: table;
+    }
+
+    div.form-example {
+        display: table-row;
+    }
+
+    label, input {
+        display: table-cell;
+        margin-bottom: 10px;
+    }
+
+    label {
+        padding-right: 10px;
+    }
+</style>
+
+<body>
+
+    <form action="{% url 'new' %}" method="POST" class="form-example">
+        {% csrf_token %}
+        <div class="form-example">
+            <label for="name">Article Title: </label>
+            <input type="text" name="title" id="title" required>
+        </div>
+        <div class="form-example">
+            <label for="content">Content: </label>
+            <input type="text" name="content" id="content" required>
+        </div>
+
+        <label for="cars">Choose a category:</label>
+
+        <select name="category" id="category">
+            {% for category in category_list %}
+                <option value="{{ category.name }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+        <div class="form-example">
+            <input type="submit" value="작성하기!">
+        </div>
+    </form>
+
+</body>
+</html>
